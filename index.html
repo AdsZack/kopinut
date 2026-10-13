@@ -2,12 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>kopinut</title>
+    <!-- <link rel="stylesheet" href="src/style.css"> -->
   </head>
   <body>
-    <div id="app"></div>
+    <div class="grid h-screen grid-cols-[64px_minmax(0,1fr)] overflow-hidden">
+      <aside class="bg-stone-900 text-white">Sidebar</aside>
+      <div class="grid min-h-0 grid-rows-[64px_minmax(0,1fr)]">
+        <header class="bg-gray-200">Header</header>
+        <main class="grid min-h-0 min-w-0 grid-cols-[minmax(0,1fr)_280px] gap-2 overflow-y-auto p-2">
+          <div class="bg-gray-400">Main</div>
+          <div class="bg-gray-600">Order</div>
+        </main>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
