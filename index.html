@@ -8,13 +8,257 @@
     <!-- <link rel="stylesheet" href="src/style.css"> -->
   </head>
   <body>
-    <div class="grid h-screen grid-cols-[64px_minmax(0,1fr)] overflow-hidden">
-      <aside class="bg-stone-900 text-white">Sidebar</aside>
+    <div class="grid h-screen grid-cols-[50px_minmax(0,1fr)] overflow-hidden">
+      <!-- Sidebar -->
+      <aside class="flex flex-col items-center p-3">
+        <button class="w-9 h-9">
+          <img src="src/assets/line.svg" alt="line">
+        </button>
+        <div class="flex flex-col flex-1 items-center justify-center gap-10">
+          <button class="w-6 h-6 ">
+            <img src="src/assets/cake.svg" alt="">
+          </button>
+          <button class="w-6 h-6 ">
+            <img src="src/assets/snack.svg" alt="">
+          </button>
+          <button class="w-6 h-6 ">
+            <img src="src/assets/food.svg" alt="">
+          </button>
+          <button class="w-6 h-6 ">
+            <img src="src/assets/juice.svg" alt="">
+          </button>
+          <button class="w-6 h-6 ">
+            <img src="src/assets/tea.svg" alt="">
+          </button>
+          <button class="w-6 h-6 ">
+            <img src="src/assets/coffee.svg" alt="">
+          </button>
+        </div>
+      </aside>
+
+      <!-- Header -->
       <div class="grid min-h-0 grid-rows-[64px_minmax(0,1fr)]">
-        <header class="bg-gray-200">Header</header>
-        <main class="grid min-h-0 min-w-0 grid-cols-[minmax(0,1fr)_280px] gap-2 overflow-y-auto p-2">
-          <div class="bg-gray-400">Main</div>
-          <div class="bg-gray-600">Order</div>
+        <header class="flex justify-between px-3">
+          <div class="flex items-center gap-10">
+            <h1 class="text-2xl font-bold w-18">Coffee</h1>
+            <div class="flex items-center border w-150 rounded-md p-1 h-8 gap-1">
+              <img src="src/assets/search.svg" alt="search" class="w-5 h-5 p-1">
+              <input type="search" name="" id="" class="flex-1 focus:outline-none" placeholder="Search for coffee, meal, etc"> 
+            </div>
+          </div>
+          <div class="flex w-90 items-center gap-5 justify-between">
+            <nav class="flex gap-3">
+              <a href="/receipts" class="bg-white rounded-md shadow w-9 h-9 p-1">
+                <img src="src/assets/receipt.svg" alt="receipt">
+              </a>
+              <a href="/stats" class="bg-white rounded-md shadow w-9 h-9 p-1">
+                <img src="src/assets/stat.svg" alt="stats">
+              </a>
+              <a href="/setting" class="bg-white rounded-md w-9 h-9 shadow p-1">
+                <img src="src/assets/setting.svg" alt="setting">
+              </a>
+            </nav>
+            <div class="flex gap-3 items-center">
+              <img src="src/assets/profile.jpeg" alt="profile" class="w-9 h-9 rounded-2xl border">
+              <h2>Cashier</h2>
+              <button class="n-0">
+                <img src="src/assets/dropdown.svg" alt="dropdown" class="w-6 h-6">
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="grid min-h-0 min-w-0 grid-cols-[minmax(0,1fr)_500px] gap-2 p-2">
+          <!-- Main Menu -->
+          <div class="flex flex-col min-w-0 min-h-0 gap-6 px-1">
+            
+            <!-- Filter Menu -->
+            <div class="flex shrink-0 flex-wrap gap-3 items-center mx-2">
+              <button class="bg-black text-white p-1 rounded-md min-w-20">All</button>
+              <button class="px-2 py-1 rounded-md w-auto shadow">Espresso</button>
+              <button class="px-2 py-1 rounded-md w-auto shadow">Latte</button>
+              <button class="px-2 py-1 rounded-md w-auto shadow">Indocape</button>
+            </div>
+            
+            <!-- Card Menu -->
+            <div 
+              class="grid grid-cols-3 min-h-0 flex-1 content-start gap-5 overflow-y-auto">
+              
+              <!-- Card -->
+              <div class="flex flex-col min-w-0 gap-3 rounded-lg p-3 shadow-lg">
+                <img 
+                  src="src/assets/espresso.jpg" 
+                  alt="espresso" 
+                  class="w-full aspect-4/3 rounded-lg object-cover"
+                >
+                <div class="flex items-start justify-between gap-2">
+                  <h3 class="min-w-0 text-base font-semibold">Espresso</h3>
+                  <p class="shrink-0 text-sm font-bold">Rp25.000</p>
+                </div>
+                <div class="flex justify-around gap-2">
+                  <button class="flex flex-col items-center gap-1 rounded-md p-1">
+                    <img src="src/assets/cup-size.svg" alt="" class="h-6 w-6">
+                    <span class="text-xs">Small</span>
+                  </button>
+                  <button class="flex flex-col items-center gap-1 rounded-md p-1">
+                    <img src="src/assets/cup-size.svg" alt="" class="h-6 w-6">
+                    <span class="text-xs">Medium</span>
+                  </button>
+                  <button class="flex flex-col items-center gap-1 rounded-md p-1">
+                    <img src="src/assets/cup-size.svg" alt="" class="h-6 w-6">
+                    <span class="text-xs">Large</span>
+                  </button>
+                </div>
+              </div>
+              <div class="flex flex-col min-w-0 gap-3 rounded-lg p-3 shadow-lg">
+                <img 
+                  src="src/assets/espresso.jpg" 
+                  alt="espresso" 
+                  class="w-full aspect-4/3 rounded-lg object-cover"
+                >
+                <div class="flex items-start justify-between gap-2">
+                  <h3 class="min-w-0 text-base font-semibold">Espresso</h3>
+                  <p class="shrink-0 text-sm font-bold">Rp25.000</p>
+                </div>
+                <div class="flex justify-around gap-2">
+                  <button class="flex flex-col items-center gap-1 rounded-md p-1">
+                    <img src="src/assets/cup-size.svg" alt="" class="h-6 w-6">
+                    <span class="text-xs">Small</span>
+                  </button>
+                  <button class="flex flex-col items-center gap-1 rounded-md p-1">
+                    <img src="src/assets/cup-size.svg" alt="" class="h-6 w-6">
+                    <span class="text-xs">Medium</span>
+                  </button>
+                  <button class="flex flex-col items-center gap-1 rounded-md p-1">
+                    <img src="src/assets/cup-size.svg" alt="" class="h-6 w-6">
+                    <span class="text-xs">Large</span>
+                  </button>
+                </div>
+              </div>
+              <div class="flex flex-col min-w-0 gap-3 rounded-lg p-3 shadow-lg">
+                <img 
+                  src="src/assets/espresso.jpg" 
+                  alt="espresso" 
+                  class="w-full aspect-4/3 rounded-lg object-cover"
+                >
+                <div class="flex items-start justify-between gap-2">
+                  <h3 class="min-w-0 text-base font-semibold">Espresso</h3>
+                  <p class="shrink-0 text-sm font-bold">Rp25.000</p>
+                </div>
+                <div class="flex justify-around gap-2">
+                  <button class="flex flex-col items-center gap-1 rounded-md p-1">
+                    <img src="src/assets/cup-size.svg" alt="" class="h-6 w-6">
+                    <span class="text-xs">Small</span>
+                  </button>
+                  <button class="flex flex-col items-center gap-1 rounded-md p-1">
+                    <img src="src/assets/cup-size.svg" alt="" class="h-6 w-6">
+                    <span class="text-xs">Medium</span>
+                  </button>
+                  <button class="flex flex-col items-center gap-1 rounded-md p-1">
+                    <img src="src/assets/cup-size.svg" alt="" class="h-6 w-6">
+                    <span class="text-xs">Large</span>
+                  </button>
+                </div>
+              </div>
+              <div class="flex flex-col min-w-0 gap-3 rounded-lg p-3 shadow-lg">
+                <img 
+                  src="src/assets/espresso.jpg" 
+                  alt="espresso" 
+                  class="w-full aspect-4/3 rounded-lg object-cover"
+                >
+                <div class="flex items-start justify-between gap-2">
+                  <h3 class="min-w-0 text-base font-semibold">Espresso</h3>
+                  <p class="shrink-0 text-sm font-bold">Rp25.000</p>
+                </div>
+                <div class="flex justify-around gap-2">
+                  <button class="flex flex-col items-center gap-1 rounded-md p-1">
+                    <img src="src/assets/cup-size.svg" alt="" class="h-6 w-6">
+                    <span class="text-xs">Small</span>
+                  </button>
+                  <button class="flex flex-col items-center gap-1 rounded-md p-1">
+                    <img src="src/assets/cup-size.svg" alt="" class="h-6 w-6">
+                    <span class="text-xs">Medium</span>
+                  </button>
+                  <button class="flex flex-col items-center gap-1 rounded-md p-1">
+                    <img src="src/assets/cup-size.svg" alt="" class="h-6 w-6">
+                    <span class="text-xs">Large</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Checkout -->
+          <div class="flex flex-col max-h-screen gap-3 rounded-2xl border p-3">
+            <div class="flex flex-row justify-between">
+              <h3>Order #123</h3>
+              <button class="bg-gray-200 shadow p-1 rounded-md text-sm">Clear all</button>
+            </div>
+            <div class="flex flex-col min-h-70 gap-2">
+              <div class="flex flex-row justify-between">
+                <div class="flex items-center gap-3">
+                  <img src="src/assets/espresso.jpg" alt="espresso" class="rounded-md w-9 h-9">
+                  <div class="flex flex-col">
+                    <h3>Espresso</h3>
+                    <p>Rp25.000</p>
+                  </div>
+                </div>
+                <div class="flex gap-5 font-bold text-base items-center">
+                  <button>-</button>
+                  <h3>3</h3>
+                  <button>+</button>
+                </div>
+              </div>
+              <div class="flex flex-row justify-between">
+                <div class="flex items-center gap-3">
+                  <img src="src/assets/espresso.jpg" alt="espresso" class="rounded-md w-9 h-9">
+                  <div class="flex flex-col">
+                    <h3>Espresso</h3>
+                    <p>Rp25.000</p>
+                  </div>
+                </div>
+                <div class="flex gap-5 font-bold text-base items-center">
+                  <button>-</button>
+                  <h3>3</h3>
+                  <button>+</button>
+                </div>
+              </div>
+              <div class="flex flex-row justify-between">
+                <div class="flex items-center gap-3">
+                  <img src="src/assets/espresso.jpg" alt="espresso" class="rounded-md w-9 h-9">
+                  <div class="flex flex-col">
+                    <h3>Espresso</h3>
+                    <p>Rp25.000</p>
+                  </div>
+                </div>
+                <div class="flex gap-5 font-bold text-base items-center">
+                  <button>-</button>
+                  <h3>3</h3>
+                  <button>+</button>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col border rounded-md p-1 min-h-15">
+              <div class="flex justify-between">
+                <h3>Subtotal</h3>
+                <h3>Rp75.000</h3>
+              </div>
+              <div class="flex justify-between">
+                <h3>Tax</h3>
+                <h3>Rp5.000</h3>
+              </div>
+            </div>
+            <div class="flex flex-col border rounded-md p-1 min-h-10">
+              <div class="flex justify-between">
+                <h3>Total</h3>
+                <h3>Rp70.000</h3>
+              </div>
+            </div>
+            <div class="flex flex-col min-h-10">
+              <button class="bg-blue-400 shadow font-bold rounded-md h-10">Print Reciepts</button>
+            </div>
+          </div>
         </main>
       </div>
     </div>
