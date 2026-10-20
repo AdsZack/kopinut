@@ -5,7 +5,7 @@
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>kopinut</title>
-    <link rel="stylesheet" href="src/style.css" />
+    <!-- <link rel="stylesheet" href="src/style.css" /> -->
   </head>
   <body class="bg-black">
     <div class="grid h-screen grid-cols-[50px_minmax(0,1fr)] overflow-hidden">
@@ -13,7 +13,13 @@
       <aside
         class="relative z-0 flex min-w-0 flex-col items-center overflow-hidden p-3 bg-black"
       >
-        <button class="w-6 h-6 shrink-0">
+        <button
+          id="sidebar-toggle"
+          type="button"
+          class="w-6 h-6 shrink-0"
+          aria-label="Show/Hidden Category"
+          aria-expanded="true"
+        >
           <img src="src/assets/icons/line-1.svg" alt="line" />
         </button>
 
@@ -21,14 +27,12 @@
           id="category-list"
           class="flex min-h-0 w-full flex-1 flex-row-reverse text-xs items-center gap-8 justify-center -rotate-90 text-white"
         >
-          <button data-category="dessert" class="focus:font-bold">
-            Desert
-          </button>
-          <button data-category="snack" class="focus:font-bold">Snack</button>
-          <button data-category="meal" class="focus:font-bold">Meal</button>
-          <button data-category="juice" class="focus:font-bold">Juice</button>
-          <button data-category="tea" class="focus:font-bold">Tea</button>
-          <button data-category="coffee" class="focus:font-bold">Coffee</button>
+          <button data-category="dessert">Dessert</button>
+          <button data-category="snack">Snack</button>
+          <button data-category="meal">Meal</button>
+          <button data-category="juice">Juice</button>
+          <button data-category="tea">Tea</button>
+          <button data-category="coffee">Coffee</button>
         </div>
       </aside>
 
@@ -38,7 +42,7 @@
       >
         <header class="flex justify-between px-3 items-center">
           <div class="flex items-center gap-10">
-            <h1 class="text-2xl font-bold w-18">Coffee</h1>
+            <h1 id="category-title" class="text-2xl font-bold w-28">Coffee</h1>
             <div
               class="flex items-center border w-150 rounded-md p-1 h-8 gap-1"
             >
@@ -49,42 +53,43 @@
               />
               <input
                 type="search"
-                name=""
-                id=""
+                id="search-input"
                 class="flex-1 focus:outline-none"
                 placeholder="Search for coffee, meal, etc"
               />
             </div>
           </div>
-          <div class="flex w-90 items-center gap-5 justify-between">
-            <nav class="flex gap-3">
-              <a
-                href="/receipts"
-                class="bg-white rounded-md shadow w-9 h-9 p-1"
-              >
-                <img src="src/assets/icons/receipt.svg" alt="receipt" />
-              </a>
-              <a href="/stats" class="bg-white rounded-md shadow w-9 h-9 p-1">
-                <img src="src/assets/icons/stat.svg" alt="stats" />
-              </a>
-              <a href="/setting" class="bg-white rounded-md w-9 h-9 shadow p-1">
-                <img src="src/assets/icons/setting.svg" alt="setting" />
-              </a>
-            </nav>
+          <div class="relative">
             <div class="flex gap-3 items-center">
               <img
                 src="src/assets/profile.jpeg"
                 alt="profile"
                 class="w-9 h-9 rounded-2xl border"
               />
-              <h2>Cashier</h2>
-              <button class="n-0">
+              <h2 id="profile-name">Cashier</h2>
+              <button
+                id="profile-toggle"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="profile-menu"
+              >
                 <img
                   src="src/assets/icons/dropdown.svg"
                   alt="dropdown"
                   class="w-6 h-6"
                 />
               </button>
+            </div>
+            <div
+              id="profile-menu"
+              class="hidden absolute right-0 top-full z-20 mt-2 w-40 rounded-md border bg-white p-1 shadow-lg"
+            >
+              <button
+                id="auth-action"
+                type="button"
+                class="w-full rounded-md px-3 py-2 text-left text-sm hover:bg-gray-100"
+              ></button>
             </div>
           </div>
         </header>
@@ -99,9 +104,7 @@
             <div
               id="subcategory-list"
               class="flex shrink-0 flex-wrap gap-3 items-center mx-2"
-            >
-              <button id="data-sub-category"></button>
-            </div>
+            ></div>
 
             <!-- Card Menu -->
             <div

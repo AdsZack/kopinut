@@ -47,11 +47,7 @@ export function createMenuCard(menu, onAddToCheckout) {
       addButton.style.display = "flex";
 
       sizeButtons.forEach((sizeButtons) => {
-        sizeButtons.classList.remove(
-          "bg-gray-100",
-          "ring-1",
-          "ring-gray-500",
-        );
+        sizeButtons.classList.remove("bg-gray-100", "ring-1", "ring-gray-500");
       });
 
       button.classList.add("bg-gray-100", "ring-1", "ring-gray-500");
@@ -100,6 +96,13 @@ function createSizeOptions(sizes = []) {
 
 export function renderMenus(menuList, menus, onAddToCheckout) {
   menuList.innerHTML = "";
+  if (menus.length === 0) {
+    const message = document.createElement("p");
+    message.className = "col-span-3 py-10 text-center text-gray-500";
+    message.textContent = "Menu not found";
+    menuList.appendChild(message);
+    return;
+  }
   menus.forEach((menu) => {
     const card = createMenuCard(menu, onAddToCheckout);
     menuList.appendChild(card);

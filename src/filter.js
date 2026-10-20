@@ -5,6 +5,23 @@ const filters = { category: "coffee", subCategory: "all", keyword: "" };
 export function setCategory(category) {
   filters.category = category;
   filters.subCategory = "all";
+  filters.keyword = "";
+}
+
+export function setKeyword(keyword) {
+  filters.keyword = keyword;
+}
+
+export function getKeyword() {
+  return filters.keyword;
+}
+
+export function isSearching() {
+  return filters.keyword.trim() !== "";
+}
+
+export function getActiveCategory() {
+  return filters.category;
 }
 
 export function setSubCategory(subCategory) {
@@ -21,6 +38,10 @@ export function getSubCategories() {
 }
 
 export function getVisibleMenus() {
+  if (isSearching()) {
+    const keyword = filters.keyword.trim().toLowerCase();
+    return menus.filter((menu) => menu.name.toLowerCase().includes(keyword));
+  }
   return menus.filter((menu) => {
     const matchCategory = menu.category === filters.category;
     const matchSub =

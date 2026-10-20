@@ -1,11 +1,5 @@
 import { setSubCategory } from "./filter.js";
-
-function toLabel(slug) {
-  return slug
-    .split("-")
-    .map((word) => word[0].toUpperCase() + word.slice(1))
-    .join(" ");
-}
+import { toLabel } from "./format.js";
 
 function createButton(value, label, isActive) {
   const activeClass = "bg-black text-white p-1 rounded-md min-w-20";
